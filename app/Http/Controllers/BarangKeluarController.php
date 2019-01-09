@@ -200,7 +200,7 @@ class BarangKeluarController extends Controller
     }
 
     public function getDetailBarang(Request $request){
-        $data = Barang::select('harga_jual')->where('id',$request->id)->first();
+        $data = Barang::select('harga_jual','kuantitas')->where('id',$request->id)->first();
         return response()->json($data);
     }
 

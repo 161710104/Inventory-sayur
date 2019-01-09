@@ -137,6 +137,7 @@
 										            <tr>
 										              <th>Nama Barang</th>
 										              <th>Kuantitas</th>
+										              <th>Stok</th>
 										              <th>Harga</th>
 										              <th>
 										              	<input type="hidden" name="id_customer" value="">
@@ -146,9 +147,10 @@
 										        </thead>
 										        <tbody id="coba">
 										        	<tr id="row">
-										        		<td><select name="id_barang[]" class="form-control" id="barang">@foreach($barang as $data)<option value="{{$data->id}}">{{$data->nama_barang}}</option>@endforeach</select></td>
+										        		<td><select name="id_barang[]" class="form-control barangselect select-pilih" id="barang">@foreach($barang as $data)<option value="{{$data->id}}">{{$data->nama_barang}}</option>@endforeach</select></td>
 													    <td><input type="number" name="kuantitas[]" class="form-control kuantitas"/></td>
-													    <td><input type="number" name="harga[]" id="harga_jual" class="form-control" value=""/></td>
+													    <td><input type="text" class="form-control stok" readonly /></td>
+													    <td><input type="number" name="harga[]" id="harga_jual" class="form-control harga_jual" value=""/></td>
 													    <td><button type="button" class="btn btn-danger btn-sm" onclick="remove('+ no +')"><i class="fa fa-minus-square"></i></button>
 													    </td>
 										        	</tr>

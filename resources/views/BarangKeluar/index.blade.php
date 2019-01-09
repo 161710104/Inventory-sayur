@@ -227,6 +227,7 @@
 
         success:function(data){
           tr.find('.harga_jual').val(data.harga_jual);
+          tr.find('.stok').val(data.kuantitas);
         }
       });
     });
@@ -237,7 +238,8 @@
         var html = "<tr id='row"+count+"'>";
         html +='<td><select name="id_barang[]" class="form-control barangselect select-pilih" id="barang">@foreach($barang as $data)<option value="{{$data->id}}">{{$data->nama_barang}}</option>@endforeach</select></td>';
         html +='<td><input type="number" name="kuantitas[]" class="form-control kuantitas"/></td>';
-        html +='<td><input type="number" name="harga[]" id="harga_jual" class="form-control" value=""/></td>';
+        html +='<td><input type="text" class="form-control stok" readonly/></td>';
+        html +='<td><input type="number" name="harga[]" id="harga_jual" class="form-control harga_jual" value=""/></td>';
         html +='<td><button type="button" class="btn btn-danger btn-sm remove" data-row="row'+ count +'"><i class="fa fa-minus-square"></i></button></td></tr>';
         $('#coba').append(html);  
       });
